@@ -22,7 +22,7 @@
     angular
         .module("app")
         .controller("studentCtrl", function($scope, $http){
-            $http.get('/data/test.json').then(function(student){
+            $http.get('data/test.json').then(function(student){
                 console.log(student.data);
                 $scope.students = student.data
             })
