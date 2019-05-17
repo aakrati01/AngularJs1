@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+ 
+    <head>
+        <title>Hello World AngularJS application</title>
+        <link href="node_modules/angular-material/angular-material.css" rel="stylesheet">
+        <link href="node_modules/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+    </head>
+
+    <body ng-app='app'  ng-controller="studentCtrl" > 
+
+        <Hello-world></Hello-world>
+        <div>
+            <form style="margin:3rem">
+                <div style="display:flex">
+                    <div style="width:50%">
+                        <label><b>Student Name:</b></label><br>
+                        <input type="text" ng-model="student.name" placeholder="Enter name" style="border: none;border-bottom: 1px solid #cccccc;
+                        margin-top: 1rem;width:70%">
+                    </div>
+                    <div style="width:50%">
+                        <label><b>Student marks: </b></label><br>
+                        <input type="text" ng-model="student.price" placeholder="Enter marks" style="border: none;border-bottom: 1px solid #cccccc;
+                        margin-top: 1rem;width:70%">
+                    </div>
+                </div>
+                <div style="margin-top: 1rem">
+                    <label><b>Student Hobbies: </b></label><br>
+                    <input type="text" ng-model="student.hobbies" placeholder="Enter hobbies" style="border: none;border-bottom: 1px solid #cccccc;
+                    margin-top: 1rem;width:80%">
+                </div>
+                <div style="margin:2rem">
+                    <button style="padding: 0.5rem; border-radius: 5px;color: white; background-color: #0bab75;
+                    border: 1px solid #0bab75;" ng-click="addNewStudent(student)">Add Student</button>
+                </div>
+                <pre>{{student}}</pre>
+            </form>
+        </div>
+        <div> 
+            <md-card ng-repeat="student in students" style="padding:1rem">
+                <div style="display:flex">
+                    <span fxFlex="30">{{student.name}}</span>
+                    <span fxFlex="30">{{student.hobbies}}</span>
+                    <span fxFlex="30">{{student.marks}}</span>
+                    <div style="float:right">
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </div>
+                </div>
+            
+            </md-card>
+
+        </div>
+    </body>
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="components/student.ctr.js"></script>
+    <!-- <script src="node_modules/angular-animate/angular-animate.js"></script> -->
+    <!-- <script src="node_modules/angular-aria/angular-aria.js"></script> -->
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="components/student.fac.js"></script>
+</html>
